@@ -1,0 +1,16 @@
+applications:
+- name: vision
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  memory: 1G
+  instances: 1
+  routes:
+  - route: vision-feeds.cfapps.io
+  services:
+  - vision-redis
+  - vision-mysql
+  env:
+    PATH: /usr/local/bin:/usr/bin:/bin:/home/vcap/app/bin
+    SPRING_PROFILES_ACTIVE: dev
+    #TZ: Canada/Eastern
+    JAVA_OPTS: -Duser.timezone=Canada/Eastern
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '[enabled: false]'

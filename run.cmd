@@ -1,0 +1,1 @@
+j8 & java -Djava.net.preferIPv4Stack=true -jar target/commafeed.jar server config.dev.yml

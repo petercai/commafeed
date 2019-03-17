@@ -1,0 +1,1 @@
+cf push -f pcf\vision-manifest.yml -p target\commafeed.jar
