@@ -169,6 +169,8 @@ public class CommaFeedApplication extends Application<CommaFeedConfiguration> {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new CommaFeedApplication().run(args);
+		CommaFeedApplication app = new CommaFeedApplication();
+		String path = app.getClass().getClassLoader().getResource("config.yml").getPath();
+		app.run(new String[]{"server",path});
 	}
 }
