@@ -116,7 +116,6 @@ public class CommaFeedApplication extends Application<CommaFeedConfiguration> {
 		environment.jersey().setUrlPattern("/rest/*");
 		((DefaultServerFactory) config.getServerFactory()).setJerseyRootPath("/rest/*");
 		environment.jersey().register(injector.getInstance(AdminREST.class));
-		environment.jersey().register(injector.getInstance(HealthREST.class));
 		environment.jersey().register(injector.getInstance(CategoryREST.class));
 		environment.jersey().register(injector.getInstance(EntryREST.class));
 		environment.jersey().register(injector.getInstance(FeedREST.class));
@@ -165,7 +164,7 @@ public class CommaFeedApplication extends Application<CommaFeedConfiguration> {
 
 	public static void main(String[] args) throws Exception {
 		CommaFeedApplication app = new CommaFeedApplication();
-		String path = app.getClass().getClassLoader().getResource("config.yml").getPath();
+		String path = app.getClass().getClassLoader().getResource("config-pcf.yml").getPath();
 		app.run(new String[]{"server",path});
 	}
 }
