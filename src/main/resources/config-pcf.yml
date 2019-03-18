@@ -2,7 +2,7 @@
 # ------------------
 app:
   # url used to access commafeed
-  publicUrl: http://localhost:8082/
+  publicUrl: https://vision-feeds.cfapps.io
   
   # wether to allow user registrations
   allowRegistrations: true
@@ -70,19 +70,6 @@ app:
   # user-agent string that will be used by the http client, leave empty for the default one
   userAgent:
   
-# Database connection
-# -------------------  
-# for MySQL
-# driverClass is com.mysql.jdbc.Driver
-# url is jdbc:mysql://localhost/commafeed?autoReconnect=true&failOverReadOnly=false&maxReconnects=20&rewriteBatchedStatements=true
-#
-# for PostgreSQL
-# driverClass is org.postgresql.Driver
-# url is jdbc:postgresql://localhost:5432/commafeed
-#
-# for Microsoft SQL Server
-# driverClass is net.sourceforge.jtds.jdbc.Driver
-# url is jdbc:jtds:sqlserver://localhost:1433/commafeed;instance=<instanceName, remove if not needed>
 
 database:
   driverClass: org.h2.Driver
@@ -108,19 +95,12 @@ server:
 logging:
   level: INFO
   loggers:
-    com.commafeed: DEBUG
+    com.commafeed: INFO
     liquibase: INFO
     org.hibernate.SQL: INFO # or ALL for sql debugging
     org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: WARN
   appenders:
     - type: console
-    - type: file
-      currentLogFilename: log/commafeed.log
-      threshold: ALL
-      archive: true
-      archivedLogFilenamePattern: log/commafeed-%d.log
-      archivedFileCount: 5
-      timeZone: UTC
       
 # Redis pool configuration
 # (only used if app.cache is 'redis')
