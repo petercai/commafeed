@@ -5,9 +5,9 @@ applications:
   instances: 1
   routes:
   - route: vision-feeds.cfapps.io
-  services:
-  - vision-redis
-  - vision-mysql
+  # services:
+  # - vision-redis
+  # - vision-mysql
   env:
     PATH: /usr/local/bin:/usr/bin:/bin:/home/vcap/app/bin
     SPRING_PROFILES_ACTIVE: dev

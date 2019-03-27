@@ -1,0 +1,6 @@
+applications:
+- name: mongo-dev
+  docker:
+    image: mongo
+  routes:
+  - route: mongo-dev.cf-tcpapps.io
