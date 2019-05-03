@@ -13,7 +13,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import com.commafeed.frontend.resource.*;
 import org.eclipse.jetty.server.session.SessionHandler;
 import org.hibernate.cfg.AvailableSettings;
 
@@ -35,6 +34,13 @@ import com.commafeed.backend.service.StartupService;
 import com.commafeed.backend.service.UserService;
 import com.commafeed.backend.task.ScheduledTask;
 import com.commafeed.frontend.auth.SecurityCheckFactoryProvider;
+import com.commafeed.frontend.resource.AdminREST;
+import com.commafeed.frontend.resource.CategoryREST;
+import com.commafeed.frontend.resource.EntryREST;
+import com.commafeed.frontend.resource.FeedREST;
+import com.commafeed.frontend.resource.PubSubHubbubCallbackREST;
+import com.commafeed.frontend.resource.ServerREST;
+import com.commafeed.frontend.resource.UserREST;
 import com.commafeed.frontend.servlet.AnalyticsServlet;
 import com.commafeed.frontend.servlet.CustomCssServlet;
 import com.commafeed.frontend.servlet.LogoutServlet;
@@ -163,8 +169,6 @@ public class CommaFeedApplication extends Application<CommaFeedConfiguration> {
 	}
 
 	public static void main(String[] args) throws Exception {
-		CommaFeedApplication app = new CommaFeedApplication();
-		String path = app.getClass().getClassLoader().getResource("config-pcf.yml").getPath();
-		app.run(new String[]{"server",path});
+		new CommaFeedApplication().run(args);
 	}
 }
