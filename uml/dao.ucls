@@ -1,54 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.commafeed.backend.dao.GenericDAO" project="commafeed" 
-    file="/commafeed/src/main/java/com/commafeed/backend/dao/GenericDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="231" width="207" x="235" y="-51"/>    
+  <class id="1" language="java" name="com.commafeed.backend.model.QFeedCategory" project="commafeed" 
+    file="/commafeed/target/generated-sources/annotations/com/commafeed/backend/model/QFeedCategory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="333" width="325" x="-5" y="-24"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="false" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.commafeed.backend.dao.UserDAO" project="commafeed" 
-    file="/commafeed/src/main/java/com/commafeed/backend/dao/UserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="177" x="16" y="-11"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="false" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="com.commafeed.backend.dao.UserRoleDAO" project="commafeed" 
-    file="/commafeed/src/main/java/com/commafeed/backend/dao/UserRoleDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="122" y="271"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="false" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="com.commafeed.backend.dao.UserSettingsDAO" project="commafeed" 
-    file="/commafeed/src/main/java/com/commafeed/backend/dao/UserSettingsDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="177" x="319" y="223"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="false" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <generalization id="5">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="6">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="7">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
+  <association id="2">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="3" name="parent"/>      
+      <multiplicity id="4" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="5">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="6" name="feedCategory"/>      
+      <multiplicity id="7" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="false" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
